@@ -1,0 +1,3 @@
+import { DataTypes } from "sequelize";
+import { sequelize } from "@/lib/sequelize";
+export const ActivoPatrimonio = sequelize?.define("ActivoPatrimonio", { id:{type:DataTypes.UUID,primaryKey:true,defaultValue:DataTypes.UUIDV4},usuarioId:{type:DataTypes.UUID,field:"usuario_id"},monedaId:{type:DataTypes.UUID,field:"moneda_id"},nombre:DataTypes.STRING,tipo:DataTypes.STRING,descripcion:DataTypes.TEXT,valorActual:{type:DataTypes.DECIMAL(18,2),field:"valor_actual"},fechaValoracion:{type:DataTypes.DATEONLY,field:"fecha_valoracion"},activo:DataTypes.BOOLEAN},{tableName:"activos_patrimonio",underscored:true,paranoid:true});

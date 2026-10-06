@@ -1,0 +1,2 @@
+import { failure, success } from "@/lib/api-response"; import { requireSession } from "@/lib/session"; import { deudasService } from "@/services/deudas.service";
+export async function GET(r){try{const s=await requireSession(r);const filtro=new URL(r.url).searchParams.get("filtro")||"";return success(await deudasService.listar(s.userId,filtro));}catch(e){return failure(e);}} export async function POST(r){try{const s=await requireSession(r);return success(await deudasService.crear(s.userId,await r.json()),201);}catch(e){return failure(e);}}

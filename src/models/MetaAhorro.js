@@ -1,0 +1,3 @@
+import { DataTypes } from "sequelize";
+import { sequelize } from "@/lib/sequelize";
+export const MetaAhorro = sequelize?.define("MetaAhorro", { id:{type:DataTypes.UUID,primaryKey:true,defaultValue:DataTypes.UUIDV4},usuarioId:{type:DataTypes.UUID,field:"usuario_id"},monedaId:{type:DataTypes.UUID,field:"moneda_id"},nombre:DataTypes.STRING,descripcion:DataTypes.TEXT,montoObjetivo:{type:DataTypes.DECIMAL(18,2),field:"monto_objetivo"},fechaInicio:{type:DataTypes.DATEONLY,field:"fecha_inicio"},fechaObjetivo:{type:DataTypes.DATEONLY,field:"fecha_objetivo"},estado:DataTypes.STRING},{tableName:"metas_ahorro",underscored:true,paranoid:true});

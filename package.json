@@ -1,0 +1,31 @@
+{
+  "name": "miplata",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/next-server.cjs dev",
+    "build": "next build",
+    "start": "node scripts/next-server.cjs start",
+    "lint": "eslint .",
+    "test": "node tests/decimal-check.mjs",
+    "db:migrate": "node scripts/run-migrations.cjs",
+    "db:seed": "node scripts/run-seeders.cjs",
+    "db:setup": "npm run db:migrate && npm run db:seed",
+    "db:verify": "node scripts/verify-database.cjs"
+  },
+  "dependencies": {
+    "next": "16.3.8",
+    "pg": "8.23.1",
+    "pg-hstore": "2.3.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sequelize": "6.37.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.3.8",
+    "postcss": "8.5.6",
+    "tailwindcss": "4.3.3"
+  }
+}
